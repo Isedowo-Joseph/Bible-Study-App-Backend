@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BiblestudydirectoryApplication {
+public class BibleStudyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BiblestudydirectoryApplication.class, args);
+		SpringApplication.run(BibleStudyApplication.class, args);
 	}
 
 }

@@ -1,43 +1,27 @@
 package com.biblestudy.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
+import com.biblestudy.model.BibleStudySession;
+import com.biblestudy.service.BibleStudySessionService;
+
 import java.util.ArrayList;
-import java.time.LocalDate;
-import com.biblestudy.model.WeekRatio;
-import com.biblestudy.model.User;
-import com.biblestudy.model.Invitation;
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
+
 public class BibleStudySessionController {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
-    long userId;
-    int Duration;
-    String readerStarter;
-    String currentChapter;
-    LocalDate nextDate;
-    LocalDate dueDate;
-    WeekRatio weekRatio;
-    Boolean completed;
-    ArrayList<User> group;
-    ArrayList<Invitation> invites;
+    BibleStudySessionService biblestudysessionservice;
 
-    public void addMember(User u){
+    public ArrayList<BibleStudySession> getAllSessions(){
+        return null;
+    }
+    public BibleStudySession getSessionById(Long id){
+        return null;
+    }
+    public BibleStudySession createSession(BibleStudySession bs) {
+        return null;
+    }
+    public void deleteSesssion(Long id){
 
     }
-    public void removeMember(User u){
-
-    }
-    public void inviteUser(long id, String status, User friendship){
+    public void updateSesssion(Long id, BibleStudySession sessionDetails){
 
     }
 }

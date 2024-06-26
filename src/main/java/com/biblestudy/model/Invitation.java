@@ -15,10 +15,9 @@ import lombok.NoArgsConstructor;
 public class Invitation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long bibleStudysessionFk;
-    String status;
-    User friendship;
-    long bibleStudyid;
+    private String status;
+    private User friendship;
+    private long bibleStudyid;
 
 
 }
