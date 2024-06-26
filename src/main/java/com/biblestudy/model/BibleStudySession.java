@@ -21,14 +21,13 @@ public class BibleStudySession {
     private long userId;
     private int Duration;
     private String readerStarter;
-    private String currentChapter;
     private LocalDate nextDate;
     private LocalDate dueDate;
     private WeekRatio weekRatio;
     private Boolean completed;
     private ArrayList<User> group;
     private ArrayList<Invitation> invites;
-
+    private Bible bible;
     public void addMember(User u){
 
     }
