@@ -1,5 +1,7 @@
 package com.biblestudy.model;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,11 +14,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Bible {
+public class Bible implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String currentChapter;
-    private String bibleVersion; // Fixed the typo from "bibleVesion" to "bibleVersion"
+    private String bibleVersion;
     private String currentVerse;
 }

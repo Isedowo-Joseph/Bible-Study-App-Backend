@@ -1,4 +1,5 @@
 package com.biblestudy.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,14 +8,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Entity;
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.time.LocalDate;
-
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BibleStudySession {
+public class BibleStudySession implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -28,32 +29,39 @@ public class BibleStudySession {
     private ArrayList<User> group;
     private ArrayList<Invitation> invites;
     private Bible bible;
-    public void addMember(User u){
+
+    public void addMember(User u) {
 
     }
-    public void removeMember(User u){
+
+    public void removeMember(User u) {
 
     }
-    public void inviteUser(long id, String status, User friendship){
+
+    public void inviteUser(long id, String status, User friendship) {
 
     }
-    public BibleStudySession saveSession(BibleStudySession bs){
+
+    public BibleStudySession saveSession(BibleStudySession bs) {
 
         return bs;
     }
-    public BibleStudySession findByid(Long id){
+
+    public BibleStudySession findByid(Long id) {
 
         return null;
     }
-    public ArrayList<BibleStudySession> findAll(){
+
+    public ArrayList<BibleStudySession> findAll() {
 
         return null;
     }
-    public void deleteByid(long id){
+
+    public void deleteByid(long id) {
 
     }
-    public void updateSession(long id, BibleStudySession sessionDetails){
 
+    public void updateSession(long id, BibleStudySession sessionDetails) {
 
     }
 }

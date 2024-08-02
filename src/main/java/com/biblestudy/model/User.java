@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,14 +28,15 @@ public class User {
     @ManyToMany(mappedBy = "participants")
     private List<CallSession> callSessions = new ArrayList<>();
 
-    public void registerUser(String name, String username, String password, String email, String phoneNumber){
+    public void registerUser(String name, String username, String password, String email, String phoneNumber) {
 
     }
-    public Boolean loginUser(String username, String password){
+
+    public Boolean loginUser(String username, String password) {
         return null;
     }
 
-    public User findByUsername(String s){
+    public User findByUsername(String s) {
         return null;
     }
 

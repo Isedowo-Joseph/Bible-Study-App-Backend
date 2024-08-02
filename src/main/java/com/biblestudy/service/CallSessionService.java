@@ -1,4 +1,5 @@
 package com.biblestudy.service;
+
 import com.biblestudy.model.CallSession;
 import com.biblestudy.model.User;
 import com.biblestudy.repository.CallSessionRepository;
@@ -21,7 +22,8 @@ public class CallSessionService {
         CallSession session = new CallSession();
 
         session.setSessionId(UUID.randomUUID().toString());
-        List<User> participants = userRepository.findAllById(usernames.stream().map(userRepository::findByUsername).map(User::getId).collect(Collectors.toList()));
+        List<User> participants = userRepository.findAllById(
+                usernames.stream().map(userRepository::findByUserName).map(User::getId).collect(Collectors.toList()));
         session.setParticipants(participants);
         callSessionRepository.save(session);
 
@@ -35,7 +37,7 @@ public class CallSessionService {
 
     public CallSession addParticipant(String sessionId, String username) {
         CallSession session = callSessionRepository.findBySessionId(sessionId);
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUserName(username);
         if (session != null && user != null) {
             session.getParticipants().add(user);
             callSessionRepository.save(session);
