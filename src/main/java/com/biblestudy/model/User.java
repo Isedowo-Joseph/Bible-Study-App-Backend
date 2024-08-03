@@ -6,38 +6,32 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "users")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
+
     private String name;
     private String userName;
     private String password;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
     private int missedDays;
-    private long bibleStudySession;
-    private ArrayList<Friendship> friends;
+    private long bibleStudySessionId;
+    @ManyToMany
+    @JoinTable(name = "user_friends", // The name of the join table
+            joinColumns = @JoinColumn(name = "user_id"), // Foreign key for User
+            inverseJoinColumns = @JoinColumn(name = "friend_id") // Foreign key for Friendship
+    )
+    private List<Friendship> friends;
+
     @ManyToMany(mappedBy = "participants")
-    private List<CallSession> callSessions = new ArrayList<>();
-
-    public void registerUser(String name, String username, String password, String email, String phoneNumber) {
-
-    }
-
-    public Boolean loginUser(String username, String password) {
-        return null;
-    }
-
-    public User findByUsername(String s) {
-        return null;
-    }
-
+    private List<CallSession> callSessions;
 }

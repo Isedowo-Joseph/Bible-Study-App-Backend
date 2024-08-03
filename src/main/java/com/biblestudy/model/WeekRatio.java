@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// to define #days on odd&even week for bible study 
 @Entity
 @Data
 @NoArgsConstructor

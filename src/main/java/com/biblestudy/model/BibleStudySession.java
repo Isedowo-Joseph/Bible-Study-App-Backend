@@ -26,42 +26,10 @@ public class BibleStudySession implements Serializable {
     private LocalDate dueDate;
     private WeekRatio weekRatio;
     private Boolean completed;
-    private ArrayList<User> group;
+    private ArrayList<User> members;
     private ArrayList<Invitation> invites;
     private Bible bible;
 
-    public void addMember(User u) {
+    // getters and setters
 
-    }
-
-    public void removeMember(User u) {
-
-    }
-
-    public void inviteUser(long id, String status, User friendship) {
-
-    }
-
-    public BibleStudySession saveSession(BibleStudySession bs) {
-
-        return bs;
-    }
-
-    public BibleStudySession findByid(Long id) {
-
-        return null;
-    }
-
-    public ArrayList<BibleStudySession> findAll() {
-
-        return null;
-    }
-
-    public void deleteByid(long id) {
-
-    }
-
-    public void updateSession(long id, BibleStudySession sessionDetails) {
-
-    }
 }
