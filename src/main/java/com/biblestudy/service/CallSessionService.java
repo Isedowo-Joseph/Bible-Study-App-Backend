@@ -53,7 +53,7 @@ public class CallSessionService {
 
     public void deleteCallSession(Long id) {
         if (!callSessionRepository.existsById(id)) {
-            // Throw an exception if the task doesn't exist
+            // Throw an exception if the callsession doesn't exist
             throw new RuntimeException("CallSession not found with id " + id);
         }
         callSessionRepository.deleteById(id);
@@ -71,7 +71,7 @@ public class CallSessionService {
         return callSession;
     }
 
-    public void updateTask(Long id, CallSession callSessionDetails) {
+    public void updateCallSession(Long id, CallSession callSessionDetails) {
         CallSession session = callSessionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("CallSession not found with id " + id));
         session.setSessionId(callSessionDetails.getSessionId());

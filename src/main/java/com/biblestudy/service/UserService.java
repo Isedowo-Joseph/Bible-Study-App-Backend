@@ -37,13 +37,13 @@ public class UserService {
 
     public void deleteUser(Long id) {
         if (!userRepository.existsById(id)) {
-            // Throw an exception if the task doesn't exist
+            // Throw an exception if the User doesn't exist
             throw new RuntimeException("User not found with id " + id);
         }
         userRepository.deleteById(id);
     }
 
-    public void updateTask(Long id, User userDetails) {
+    public void updateUser(Long id, User userDetails) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id " + id));
         user.setName(userDetails.getName());

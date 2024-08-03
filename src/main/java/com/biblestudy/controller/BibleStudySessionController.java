@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
-@CrossOrigin(origins = "http:localhost:1342")
+@CrossOrigin(origins = "http:localhost:1304")
 @RestController
 @RequestMapping("/study")
 public class BibleStudySessionController {
@@ -39,8 +39,7 @@ public class BibleStudySessionController {
     public ResponseEntity<BibleStudySession> updateBibleStudySession(@PathVariable Long id,
             @RequestBody BibleStudySession bStudySession) {
         try {
-            biblestudysessionservice.updateTask(id, bStudySession);
-            ;
+            biblestudysessionservice.updateBibleSession(id, bStudySession);
             return ResponseEntity.ok().build();
         } catch (RuntimeException ex) {
             return ResponseEntity.notFound().build();

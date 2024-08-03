@@ -30,13 +30,13 @@ public class BibleStudySessionService {
 
     public void deleteSession(Long id) {
         if (!bibleStudySessionRepository.existsById(id)) {
-            // Throw an exception if the task doesn't exist
+            // Throw an exception if the biblesession doesn't exist
             throw new RuntimeException("BibleStudySession not found with id " + id);
         }
         bibleStudySessionRepository.deleteById(id);
     }
 
-    public void updateTask(Long id, BibleStudySession bibleSessionDetails) {
+    public void updateBibleSession(Long id, BibleStudySession bibleSessionDetails) {
         BibleStudySession session = bibleStudySessionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("BibleStudySession not found with id " + id));
         session.setDuration(bibleSessionDetails.getDuration());
