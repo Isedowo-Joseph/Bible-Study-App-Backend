@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +22,8 @@ public class CallSession implements Serializable {
             joinColumns = @JoinColumn(name = "call_session_id"), // Foreign key for CallSession
             inverseJoinColumns = @JoinColumn(name = "user_id") // Foreign key for User
     )
-    private List<User> participants = new ArrayList<>();
+
+    private List<User> participants;
     // getters and setters
 
 }

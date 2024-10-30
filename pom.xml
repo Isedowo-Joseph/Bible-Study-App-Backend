@@ -60,6 +60,32 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		   <!-- Spring WebSocket -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-websocket</artifactId>
+    </dependency>
+	<!-- cool to learn how to use spring-sessions in the future with JDBC -->
+	<!-- <dependency>
+   		<groupId>org.springframework.session</groupId>
+    	<artifactId>spring-session-core</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework.session</groupId>
+		<artifactId>spring-session-jdbc</artifactId>
+	</dependency> -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>4.0.1</version> <!-- Or another version compatible with your setup -->
+		<scope>provided</scope>
+	</dependency>
+	  <!-- Spring Boot Starter Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>

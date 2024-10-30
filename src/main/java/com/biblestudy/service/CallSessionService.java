@@ -1,19 +1,13 @@
 package com.biblestudy.service;
 
-import com.biblestudy.model.BibleStudySession;
 import com.biblestudy.model.CallSession;
 import com.biblestudy.model.User;
 import com.biblestudy.repository.CallSessionRepository;
 import com.biblestudy.repository.UserRepository;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

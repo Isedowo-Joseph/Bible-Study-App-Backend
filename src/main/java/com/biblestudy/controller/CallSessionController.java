@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
-@CrossOrigin(origins = "http://localhost:1305")
 @RestController
 @RequestMapping("/call")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class CallSessionController {
     CallSessionService callSessionService;
 

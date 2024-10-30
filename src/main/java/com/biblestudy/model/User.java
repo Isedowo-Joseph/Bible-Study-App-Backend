@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,7 +18,7 @@ import java.util.List;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String name;
     private String userName;
@@ -24,14 +26,26 @@ public class User implements Serializable {
     private String email;
     private String phoneNumber;
     private int missedDays;
-    private long bibleStudySessionId;
-    @ManyToMany
-    @JoinTable(name = "user_friends", // The name of the join table
-            joinColumns = @JoinColumn(name = "user_id"), // Foreign key for User
-            inverseJoinColumns = @JoinColumn(name = "friend_id") // Foreign key for Friendship
-    )
+    private Long bibleStudySessionId;
+
+    @Lob
+    private String profileImage;
+
+    @OneToMany(mappedBy = "participants", cascade = CascadeType.REMOVE) // Use mappedBy for bidirectional
+    @JsonIgnore
+    private List<CallSession> callSessions;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "USERS_FRIENDS", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "friend_id"))
+    @JsonIgnore
     private List<Friendship> friends;
 
-    @ManyToMany(mappedBy = "participants")
-    private List<CallSession> callSessions;
+    @OneToMany
+    @JsonIgnore
+    private List<Invitation> invites;
+
+    private Boolean hasJoined = false;
+
+    @OneToOne
+    private Membership membership;
 }

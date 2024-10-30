@@ -6,8 +6,10 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import java.util.ArrayList;
+import java.util.Date;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -18,18 +20,21 @@ import java.time.LocalDate;
 public class BibleStudySession implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long userId;
+    private Long id;
+    private Long userId;
     private int Duration;
     private String readerStarter;
     private LocalDate nextDate;
     private LocalDate dueDate;
     private WeekRatio weekRatio;
     private Boolean completed;
+    @Column(length = 65535)
     private ArrayList<User> members;
+    @Column(length = 65535)
     private ArrayList<Invitation> invites;
+    @Column(length = 65535)
     private Bible bible;
-
+    private Date expiryTime;
     // getters and setters
 
 }

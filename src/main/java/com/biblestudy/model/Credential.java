@@ -1,7 +1,5 @@
 package com.biblestudy.model;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,13 +12,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Bible implements Serializable {
+public class Credential {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private int currentChapter;
-    private String bibleVersion;
-    private String book;
-    private String passage;
-    private String updatedBy;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generates an ID
+    private Long id; // Primary key
+    private String userName;
+    private String password;
+
 }

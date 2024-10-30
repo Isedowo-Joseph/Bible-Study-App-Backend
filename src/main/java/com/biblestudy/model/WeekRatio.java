@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class WeekRatio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private int oddWeek;
     private int evenWeek;
 

@@ -1,6 +1,6 @@
 package com.biblestudy.repository;
 
-import com.biblestudy.model.User;
+import com.biblestudy.model.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
